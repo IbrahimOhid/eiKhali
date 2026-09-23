@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import "tailwindcss";
+
+/*font start */
+@theme {
+  /* --font-Hind-Siliguri: "Hind Siliguri", Sans-serif; */
+  --font-Noto-Serif-Bengali: "Noto Serif Bengali", Sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+}
+
+/* Global Styles */
+:root {
+  font-family: "Hind Siliguri", sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(16, 185, 129, 0.22);
+}
+
+/* Container */
+.container-width {
+  width: min(1120px, calc(100% - 36px));
+  margin-inline: auto;
+}
+
+/* Section Spacing */
+.section-space {
+  padding-block: 76px;
+}
+
+/* Section Heading */
+.section-title {
+  font-size: clamp(1.55rem, 3vw, 2.15rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+}
+
+/* Section Subtitle */
+.section-subtitle {
+  color: #64748b;
+  margin-top: 8px;
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(15, 23, 42, 0.68);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 640px) {
+  .container-width {
+    width: min(calc(100% - 28px), 1120px);
+  }
+
+  .section-space {
+    padding-block: 54px;
+  }
+}
