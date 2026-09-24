@@ -304,56 +304,59 @@ export function Services() {
 
 export function Stats() {
   return (
-    <section className="relative isolate overflow-hidden bg-slate-950 py-16 text-white sm:py-20">
-      {/* Decorative background elements */}
+    <section className="relative isolate overflow-hidden py-16 sm:py-20">
+      {/* Background Gradient */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-24 -top-20 -z-10 h-72 w-72 rounded-full bg-sky-500/20 blur-3xl"
+        className="absolute inset-0 -z-20 bg-gradient-to-br from-sky-100 via-sky-50 to-white"
+      />
+
+      {/* Decorative Blurred Shapes */}
+      <div
+        aria-hidden="true"
+        className="absolute -left-24 -top-24 -z-10 h-72 w-72 rounded-full bg-sky-300/30 blur-3xl"
       />
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-28 -right-20 -z-10 h-80 w-80 rounded-full bg-blue-500/10 blur-3xl"
+        className="absolute -bottom-24 -right-20 -z-10 h-72 w-72 rounded-full bg-blue-300/20 blur-3xl"
       />
 
-      <div className="container-width">
+      <div className="container-width relative">
+        {/* Section Heading */}
         <div className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-sky-400/20 bg-sky-400/10 px-4 py-2 text-xs font-semibold text-sky-300 sm:text-sm">
+          <span className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white/70 px-4 py-2 text-xs font-semibold text-sky-700 shadow-sm backdrop-blur sm:text-sm">
             <Zap size={15} />
             আমাদের নেটওয়ার্ক
           </span>
 
-          <h2 className="mt-5 text-2xl font-extrabold leading-tight sm:text-3xl lg:text-4xl">
+          <h2 className="mt-5 text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl lg:text-4xl">
             কক্সবাজারের যাতায়াতকে আরও সহজ করতে
           </h2>
 
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-slate-300 sm:text-base">
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
             স্থানীয় চালক ও যাত্রীদের মধ্যে যোগাযোগ সহজ করার একটি উদ্যোগ।
             প্রয়োজন অনুযায়ী গাড়ির তথ্য খুঁজে নিন এবং সরাসরি যোগাযোগ করুন।
           </p>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-3">
+        {/* Statistics Cards */}
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 md:grid-cols-3">
           {metrics.map((metric) => (
             <div
               key={metric.label}
-              className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 text-center transition duration-300 hover:border-sky-400/30 hover:bg-white/[0.07]"
+              className="group rounded-2xl border border-sky-100 bg-white/80 p-6 text-center shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-lg sm:p-8"
             >
-              <p className="text-3xl font-extrabold text-sky-400 sm:text-4xl">
+              <p className="text-3xl font-extrabold tracking-tight text-sky-600 transition-colors duration-300 group-hover:text-blue-700 sm:text-4xl">
                 {metric.value}
               </p>
 
-              <p className="mt-3 text-sm font-medium text-slate-300">
+              <p className="mt-3 text-sm font-medium leading-6 text-slate-600">
                 {metric.label}
               </p>
             </div>
           ))}
         </div>
-
-        <p className="mt-5 text-center text-xs leading-6 text-slate-400">
-          * প্রদর্শিত পরিসংখ্যান নমুনা কনটেন্ট। প্রকাশের আগে প্রকৃত ও যাচাইকৃত
-          তথ্য দিয়ে আপডেট করুন।
-        </p>
       </div>
     </section>
   );

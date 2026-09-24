@@ -20,7 +20,7 @@ export default function App() {
         <Services />
         <Stats />
         {/* <Testimonials /> */}
-        <BookingForm />
+        {/* <BookingForm /> */}
         <FAQ />
       </main>
       <Footer />
